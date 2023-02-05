@@ -6,9 +6,9 @@ function App() {
     <div className="wrapper">
       <Header />
 
-      <div className="game-wrapper">
+      {/*<div className="game-wrapper">*/}
         <Game />
-      </div>
+      {/*</div>*/}
     </div>
   );
 }
