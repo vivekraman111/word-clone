@@ -7,7 +7,7 @@ import { WORDS } from "../../data";
 
 function GuessResults({ previousGuesses, answer }) {
   let cheatOptions =
-    previousGuesses.length > 0 &&
+    //previousGuesses.length > 0 &&
     previousGuesses[previousGuesses.length - 1] !== answer
       ? getCheatOptions(previousGuesses, answer)
       : [];

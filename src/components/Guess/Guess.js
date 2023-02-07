@@ -10,7 +10,7 @@ function Guess({ guessStr, answer }) {
       {range(5).map((i) => (
         <span
           key={i}
-          className={`cell ${guessCharStatus && guessCharStatus[i].status}`}
+          className={`cell ${guessCharStatus ? guessCharStatus[i].status : ""}`}
         >
           {guessStr[i]}
         </span>

@@ -1,24 +1,10 @@
-import React from "react";
+import React, { Children } from "react";
 
-function Banner({ type, numGuesses, answer, handleRestart }) {
+function Banner({ type, action, actionText, children }) {
   return (
     <div className={`${type} banner`}>
-      <div className="spacer"></div>
-      <p>
-        {type === "happy" ? (
-          <>
-            <strong>Congratulations!</strong> Got it in{' '}
-            <strong>{`${numGuesses} guesses`}</strong>.
-          </>
-        ) : (
-          <>
-            Sorry, the correct answer is <strong>{answer}</strong>.
-          </>
-        )}
-      </p>
-      <div className="spacer right">
-        <button onClick={handleRestart}>Restart</button>
-      </div>
+      {children}
+      {action && <button onClick={action}>{actionText}</button>}
     </div>
   );
 }

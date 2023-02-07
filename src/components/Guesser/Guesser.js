@@ -17,6 +17,9 @@ function Guesser({ handleNewGuess, disabled }) {
       >
         <label htmlFor="guess-input">Enter guess:</label>
         <input
+          required
+          pattern="[a-zA-Z]{5}"
+          title="5 letter word"
           type="text"
           id="guess-input"
           value={guess}

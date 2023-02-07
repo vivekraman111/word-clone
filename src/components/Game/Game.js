@@ -4,7 +4,8 @@ import { sample } from "../../utils";
 import { WORDS } from "../../data";
 import Guesser from "../Guesser";
 import GuessResults from "../GuessResults";
-import Banner from "../Banner";
+import WonBanner from '../WonBanner';
+import LostBanner from '../LostBanner';
 import Keyboard from "../Keyboard"
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
@@ -48,10 +49,14 @@ function Game() {
         disabled={!(gameStatus === "in-progress")}
       />
       <Keyboard previousGuesses={previousGuesses} answer={answer} />
-      {!(gameStatus === "in-progress") && (
-        <Banner
-          type={gameStatus === "win" ? "happy" : "sad"}
+      {(gameStatus === "win") && (
+        <WonBanner
           numGuesses={previousGuesses.length}
+          handleRestart={handleRestart}
+        />
+      )}
+      {(gameStatus === "loss") && (
+        <LostBanner
           answer={answer}
           handleRestart={handleRestart}
         />
